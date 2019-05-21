@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Blog using VueJS</title>
+        <link href="styles.css" rel="stylesheet"/>
+        <script src = "https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+
+    </head>
+
+    <body>
+        <div id = "vue-app">
+            <h2>{{ greet( 'night' )}}</h2>
+            <h3>{{ salary() }}</h3>
+            <p>Name: {{ name }}</p>
+            <p>Job: {{ job }}</p>
+        
+        <!-- v-bind is used for binding ; to link/bind website value in data with the one in html -->
+        
+        <a v-bind:href="website" target="_blank">VueJS Guide</a>
+        
+        <input type="text" v-bind:value="name" />
+
+        <p>I earn ${{wage}} per hour</p>
+
+        <!-- single click event listener v-on: and @ mean the same thing -->
+        <button v-on:click="wage++">Increase wage by $1</button>
+        <button @click="changeWage(-1)">Decrease wage by $1</button>
+
+        <!-- double click event listener -->
+        <button v-on:dblclick="changeWage(5)">Increase wage by $5</button>
+        <button v-on:dblclick="changeWage(-5)">Decrease wage by $5</button>
+
+        <!-- v-model is used for data binding -->
+        <input type="text"  placeholder="Update Name" v-model = "name">
+        <input type="text"  placeholder="Update Position" @keyup ="updatePosition"> 
+
+        <!-- .prevent is a modifier to prevent opening a website-->
+        <a href="https://www.google.co.in/" @click.prevent="logMsg">Google</a>
+
+        <!--for if statement, 'v-if' can be used-->
+        <p v-if="showName">Show/Hide</p>
+        <button @click="toggle">Show Buttton: {{showName}}</button>
+
+        <ul>
+            <li v-for="vowel in vowels">{{vowel}}</li>
+        </ul>
+        <div v-for="fruit in fruits">
+            <ul>
+                <li>Fruit Name: {{fruit.name}}</li>
+                <p>Color: {{fruit.color}}</p>
+            </ul>
+            
+        </div>
+        
+</div>
+
+        <script src = "app.js"></script>
+    </body>
+</html>
