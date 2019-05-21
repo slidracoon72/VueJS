@@ -4,7 +4,7 @@ new Vue({
     // 'el' -> element is used
     el: '#vue-app',
     data: {
-         name: 'Rahul Trivedi',
+         name: 'Rahul J Trivedi',
          job: 'Intern',
          website: 'https://vuejs.org/v2/guide/',
          wage: 10,
